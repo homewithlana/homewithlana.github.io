@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home with Lana · Studio</title>
+<meta name="description" content="The studio behind Home with Lana and Town Square Designs. Every home, every dollar, in one quiet place.">
+<meta name="theme-color" content="#F7F2EA">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lana's Studio">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="application-name" content="Lana's Studio">
+<meta property="og:title" content="Home with Lana · Studio">
+<meta property="og:description" content="Every home, every dollar, in one quiet place. A preview built for Lana.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://homewithlana.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Sign in -->
+<section id="gate" role="dialog" aria-modal="true" aria-label="Sign in">
+  <div class="mark lg"><span class="h">HOME.</span><span class="t">with Lana</span></div>
+  <div class="sub">Town Square Designs &middot; Lumberton</div>
+  <h1 id="gate-hello">Welcome back, Lana.</h1>
+  <p>Enter your four-digit code.</p>
+  <div class="pin" id="pin" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="pad" id="pad" role="group" aria-label="Number pad"></div>
+  <div class="gate-foot">This is a preview. Tap any four numbers, or just tap Open.</div>
+</section>
+
+<div class="shell">
+  <nav class="side" aria-label="Main, sidebar">
+    <div class="mark"><span class="h">HOME.</span><span class="t">with Lana</span></div>
+    <div class="sub">Town Square Designs</div>
+    <div id="sidenav"></div>
+    <div class="spacer"></div>
+    <div class="small muted" id="side-sync"></div>
+  </nav>
+
+  <main id="main">
+    <header class="top">
+      <div class="mark sm"><span class="h">HOME.</span><span class="t">with Lana</span></div>
+      <div class="tools">
+        <button class="iconbtn" id="bigbtn" aria-label="Make the text larger" title="Larger text"><span style="font-family:var(--sans);font-size:.95rem;white-space:nowrap">A<span style="font-size:.75em">A</span></span></button>
+        <button class="iconbtn" data-go="help" aria-label="Help" title="Help"><span aria-hidden="true" style="font-family:var(--sans);font-size:.8rem">Help</span></button>
+      </div>
+    </header>
+
+    <!-- TODAY -->
+    <section class="view on" id="v-today" aria-labelledby="greet">
+      <div class="dateline" id="dateline"></div>
+      <h2 class="page" id="greet">Good morning, Lana.</h2>
+      <p class="word" id="word"></p>
+
+      <div class="trio" id="today-trio"></div>
+
+      <h3 class="sec"><span id="taskhead">Needs you today</span> <span class="cnt" id="taskcount"></span></h3>
+      <div class="card" id="tasks"></div>
+
+      <h3 class="sec">The next seven days</h3>
+      <div class="week" id="week"></div>
+      <div class="card card-pad agenda" id="agenda"></div>
+
+      <h3 class="sec">Homes in motion <button data-go="homes">See all</button></h3>
+      <div class="mini-row" id="mini"></div>
+
+      <div class="sync" id="sync"></div>
+    </section>
+
+    <!-- HOMES -->
+    <section class="view" id="v-homes">
+      <h2 class="page">Our Homes</h2>
+      <p class="lede">Every home in one place. Tap one to open it.</p>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="plist"></div>
+    </section>
+
+    <!-- MONEY -->
+    <section class="view" id="v-money">
+      <h2 class="page">The Money</h2>
+      <p class="lede">What came in, what went out, and what is left.</p>
+      <div class="seg" id="seg">
+        <button class="on" data-p="month" aria-pressed="true">Month</button>
+        <button data-p="quarter" aria-pressed="false">3 months</button>
+        <button data-p="year" aria-pressed="false">12 months</button>
+      </div>
+      <div class="trio" id="money-trio"></div>
+
+      <h3 class="sec">Month by month</h3>
+      <div class="card card-pad chart">
+        <div id="chart"></div>
+        <div class="legend" style="margin-top:.6rem"><span><i style="background:var(--sage)"></i>Money in</span><span><i style="background:var(--walnut)"></i>Money out</span></div>
+      </div>
+
+      <div class="two" style="margin-top:.9rem">
+        <div class="card card-pad">
+          <b class="serif" style="font-size:1.3rem;font-weight:500">Where it comes from, twelve months</b>
+          <div class="donutwrap" style="margin-top:.6rem"><div class="dn" id="donut"></div><div class="lg" id="sources"></div></div>
+        </div>
+        <div class="card card-pad">
+          <b class="serif" style="font-size:1.3rem;font-weight:500">What each home earns you</b>
+          <div id="perhome" style="margin-top:.4rem"></div>
+        </div>
+      </div>
+
+      <h3 class="sec">Cash on hand</h3>
+      <div class="card card-pad chart"><div id="cash"></div><p class="small muted" style="margin-top:.5rem">Solid is what happened. Dotted is what the Studio expects, from invoices already out and bills already due.</p></div>
+
+      <details class="acc" id="owed-acc">
+        <summary><span class="t">Owed to you</span><span class="r"><span id="owed-sum" class="num"></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner"><div id="owed"></div></div>
+      </details>
+      <details class="acc">
+        <summary><span class="t">Bills to pay</span><span class="r"><span id="bills-sum" class="num"></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner" id="bills"></div>
+      </details>
+      <details class="acc">
+        <summary><span class="t">In the bank</span><span class="r"><span id="bank-sum" class="num"></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner">
+          <div class="bank" id="bank"></div>
+          <p class="note">Every payment that comes in sets aside a share you choose for taxes, so the quarterly estimates are already there when they come due.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- SHOWROOM -->
+    <section class="view" id="v-show">
+      <h2 class="page">The Showroom</h2>
+      <p class="lede">303 S LHS Drive. What sold, what is on the floor, what needs reordering.</p>
+      <div class="trio" id="show-trio"></div>
+      <h3 class="sec">The rhythm of the week</h3>
+      <div class="card card-pad chart"><div id="weekchart"></div><p class="small muted" style="margin-top:.4rem">Average sales by day. Saturday carries the week.</p></div>
+      <details class="acc" open>
+        <summary><span class="t">Best sellers this month</span><span class="r"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner" id="sellers"></div>
+      </details>
+      <details class="acc">
+        <summary><span class="t">Running low</span><span class="r"><span id="low-n"></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner" id="low"></div>
+      </details>
+      <details class="acc">
+        <summary><span class="t">What people asked for</span><span class="r"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner asked" id="asked"></div>
+      </details>
+      <details class="acc">
+        <summary><span class="t">On the floor</span><span class="r"><span id="floor-sum" class="num"></span><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner" id="floor"></div>
+      </details>
+    </section>
+
+    <!-- PEACE OF MIND -->
+    <section class="view" id="v-safe">
+      <h2 class="page">Peace of Mind</h2>
+      <p class="lede">Every dollar, accounted for. Nothing goes out without you.</p>
+      <div class="shield-hero">
+        <h3>Your books are checked every night.</h3>
+        <p>Each morning you see what came in and what went out. Anything unusual waits here for your OK.</p>
+        <div class="seal">
+          <div><b id="s-moves">0</b><span>payments yesterday</span></div>
+          <div><b id="s-flag">0</b><span>for you to look at</span></div>
+          <div><b>100%</b><span>matched to a home or a bill</span></div>
+        </div>
+        <div class="nights" id="nights"></div>
+      </div>
+
+      <h3 class="sec">For you to look at</h3>
+      <div class="card" id="flags"></div>
+
+      <details class="acc">
+        <summary><span class="t">Everything that moved yesterday</span><span class="r"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner" id="moves"></div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="t">Where this month’s money went</span><span class="r"><span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></span></summary>
+        <div class="inner"><div class="flow" id="flow"></div></div>
+      </details>
+
+      <h3 class="sec">Your house rules</h3>
+      <div class="card card-pad" id="rules"></div>
+
+      <h3 class="sec">Who can see and do what</h3>
+      <div class="card card-pad" id="team"></div>
+      <div class="card" style="margin-top:.9rem"><div class="row" style="padding:.9rem 1.15rem"><div class="l"><b>What the Studio talks to</b><span class="small muted">QuickBooks, your register, your photos, your bank</span></div><button class="btn ghost sm" data-go="conn">Connected &rsaquo;</button></div></div>
+    </section>
+
+    <!-- CONNECTED -->
+    <section class="view" id="v-conn">
+      <h2 class="page">Connected</h2>
+      <p class="lede">The Studio works with the tools you already use, and quietly fills in the rest.</p>
+      <div class="conn-hero">
+        <h3>Written down once. Seen everywhere.</h3>
+        <p>Every tool feeds the Studio on its own, overnight and all day. You never copy a number from one place to another again.</p>
+        <div class="flowline"><span>Client pays</span><span>&rsaquo; Books</span><span>&rsaquo; The home</span><span>&rsaquo; Your 7 AM text</span></div>
+      </div>
+      <h3 class="sec">What the Studio talks to</h3>
+      <div class="cgrid" id="conns"></div>
+      <h3 class="sec">How it runs itself</h3>
+      <div class="card" id="recipes"></div>
+      <h3 class="sec">Your clients’ side</h3>
+      <div class="card card-pad">
+        <p>Every client gets their own private page in your brand. They watch their home come together, say yes to selections, and pay, without a single phone call chasing them.</p>
+        <button class="btn primary sm" style="margin-top:.9rem" data-client="vc">See what the Bergerons see</button>
+      </div>
+    </section>
+
+    <!-- HELP -->
+    <section class="view" id="v-help">
+      <h2 class="page">Help</h2>
+      <p class="lede">Put the Studio on your phone like an app. One time, under a minute.</p>
+      <div class="card card-pad howto">
+        <b class="h">On an iPhone</b>
+        <ol>
+          <li><span>Open this page in Safari.</span></li>
+          <li><span>Tap the Share button at the bottom (the square with the arrow pointing up).</span></li>
+          <li><span>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.</span></li>
+        </ol>
+      </div>
+      <div class="card card-pad howto" style="margin-top:.8rem">
+        <b class="h">On an Android phone</b>
+        <ol>
+          <li><span>Open this page in Chrome.</span></li>
+          <li><span>Tap the three dots at the top right.</span></li>
+          <li><span>Tap <b>Add to Home screen</b>, then <b>Add</b>.</span></li>
+        </ol>
+        <div class="install-cta" id="install-cta"><button class="btn primary sm" id="installbtn">Add to my phone now</button></div>
+      </div>
+      <div class="card card-pad howto" style="margin-top:.8rem">
+        <b class="h">On a computer</b>
+        <ol>
+          <li><span>Open this page in Chrome or Edge.</span></li>
+          <li><span>Click the small install icon at the right end of the address bar.</span></li>
+          <li><span>It opens in its own window, right from your dock or taskbar.</span></li>
+        </ol>
+      </div>
+      <div class="card card-pad" style="margin-top:.8rem">
+        <b class="h serif" style="font-size:1.3rem;font-weight:500">Text too small?</b>
+        <p class="muted" style="margin:.3rem 0 .9rem">Tap the AA button at the top of any page to make everything larger. It remembers.</p>
+        <button class="btn ghost sm" data-big>Try it now</button>
+      </div>
+      <div class="card card-pad" style="margin-top:.8rem">
+        <b class="h serif" style="font-size:1.3rem;font-weight:500">About this preview</b>
+        <p class="muted" style="margin-top:.3rem">Every number and name in here is made up, so you can click anything. The real version would run on your books, your photos and your register, with your login and nobody else’s.</p>
+        <div class="credit"><span class="sc">SC</span><div><b style="font-weight:500">Built for Lana by Hunter Haley</b><div class="small muted">Space Cowboy &middot; Systems for people who build beautiful things</div></div></div>
+      </div>
+    </section>
+
+    <footer class="foot">Preview with sample numbers<br>Built by Space Cowboy</footer>
+  </main>
+</div>
+
+<nav class="bottom" id="bottomnav" aria-label="Main"></nav>
+
+<section id="detail" class="overlay" aria-label="Home" aria-modal="true" role="dialog"><div class="wrap" id="dwrap"></div></section>
+<section id="client" aria-label="Client view" role="dialog" aria-modal="true"><div class="sheet" id="csheet"></div></section>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="visuals.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
