@@ -349,6 +349,22 @@ nav.bottom button{flex:1;display:flex;flex-direction:column;align-items:center;g
 nav.bottom button svg{width:25px;height:25px}
 nav.bottom button.on{color:var(--oxblood)}
 
+/* Tour */
+#tour{position:fixed;inset:0;z-index:70;display:none}
+#tour.on{display:block}
+#tour.dim{background:rgba(42,31,26,.5)}
+#tour .spot{position:fixed;border-radius:18px;box-shadow:0 0 0 9999px rgba(42,31,26,.5);pointer-events:none;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+#tour .tcard{position:fixed;left:50%;transform:translateX(-50%);width:min(440px, calc(100% - 32px));background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.2rem 1.25rem 1.1rem;box-shadow:0 20px 60px rgba(42,31,26,.25);top:50%;--ty:-50%;transform:translate(-50%,var(--ty))}
+#tour .tcard.float{--ty:0}
+#tour .tstep{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+#tour h4{font-family:var(--serif);font-weight:500;font-size:1.6rem;line-height:1.15;margin-top:.3rem}
+#tour p{margin-top:.4rem;font-size:1.02rem}
+#tour .tacts{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-top:1rem}
+#tour .btn.txt{min-height:44px;padding:0 .6rem;color:var(--muted);font-size:.9rem}
+.tour-offer{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;background:var(--linen);border-radius:14px;padding:.7rem .9rem;margin:-.6rem 0 1.4rem;font-size:.95rem}
+.tour-offer .btn.txt{min-height:44px;color:var(--muted);font-size:.9rem;padding:0 .5rem}
+@media (max-width:640px){ #tour .tcard{width:calc(100% - 24px)} }
+
 footer.foot{text-align:center;font-size:.75rem;color:var(--muted);margin-top:3rem;letter-spacing:.04em;line-height:1.7}
 
 #toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 1.2rem);transform:translate(-50%,20px);background:var(--ink);color:var(--cream);padding:.85rem 1.2rem;border-radius:14px;font-size:.92rem;opacity:0;transition:all .3s;z-index:60;max-width:calc(100% - 32px);text-align:center;pointer-events:none}
